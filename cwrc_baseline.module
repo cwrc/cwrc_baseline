@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the cwrc_baseline feature.
+ */
+
+include_once 'cwrc_baseline.features.inc';
