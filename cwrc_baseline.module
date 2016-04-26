@@ -5,3 +5,35 @@
  */
 
 include_once 'cwrc_baseline.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function cwrc_baseline_menu() {
+  $items = array();
+  $items['front'] = array(
+    'title' => 'Front Page',
+    'page callback' => 'cwrc_baseline_front',
+    'access callback' => TRUE,
+  );
+  $items['notfound'] = array(
+    'title' => 'Page not found',
+    'page callback' => 'cwrc_baseline_404',
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * Page callback that returns a blank page for the front page.
+ */
+function cwrc_baseline_front() {
+  return '';
+}
+
+/**
+ * Render a simple message for the 404 page
+ */
+function cwrc_baseline_404() {
+  return t("The requested page could not be found!");
+}

@@ -20,6 +20,83 @@ function cwrc_baseline_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_add_captcha_description';
+  $strongarm->value = 1;
+  $export['captcha_add_captcha_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_administration_mode';
+  $strongarm->value = 0;
+  $export['captcha_administration_mode'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_allow_on_admin_pages';
+  $strongarm->value = 0;
+  $export['captcha_allow_on_admin_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_default_challenge';
+  $strongarm->value = 'recaptcha/reCAPTCHA';
+  $export['captcha_default_challenge'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_default_challenge_on_nonlisted_forms';
+  $strongarm->value = 0;
+  $export['captcha_default_challenge_on_nonlisted_forms'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_default_validation';
+  $strongarm->value = '1';
+  $export['captcha_default_validation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_description_en';
+  $strongarm->value = 'This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.';
+  $export['captcha_description_en'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_description_fr';
+  $strongarm->value = 'This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.';
+  $export['captcha_description_fr'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_enable_stats';
+  $strongarm->value = 0;
+  $export['captcha_enable_stats'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_log_wrong_responses';
+  $strongarm->value = 0;
+  $export['captcha_log_wrong_responses'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'captcha_persistence';
+  $strongarm->value = '1';
+  $export['captcha_persistence'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'clean_url';
   $strongarm->value = TRUE;
   $export['clean_url'] = $strongarm;
@@ -60,6 +137,26 @@ function cwrc_baseline_strongarm() {
     'block-fieldblock-874a8e164b51a4d1eddd5b90118eb12f' => '1',
     'block-views-dd0cd778927866856aefa269a3cfc970' => '1',
     'block-views-66553d96d3282749a55e20a1851a2cac' => '1',
+    'block-views-project-featured-object-block' => 1,
+    'block-islandora-blocks-metadata' => '3',
+    'block-islandora-blocks-datastreams' => '3',
+    'block-block-4' => '3',
+    'block-block-3' => '3',
+    'block-cwrc-homepage-slider-collecting' => '1',
+    'block-cwrc-homepage-slider-writing' => '1',
+    'block-blockify-blockify-page-title' => '1',
+    'block-views-what-we-are-sharing-block' => '1',
+    'block-islandora-blocks-citation' => '1',
+    'block-cwrc-theme-compat-sponsors-homepage-block' => '1',
+    'block-islandora-solr-cwrc-basic-facets' => '1',
+    'block-islandora-solr-simple' => '1',
+    'block-islandora-solr-advanced' => '1',
+    'block-masquerade-masquerade' => '1',
+    'block-islandora-collection-search-islandora-collection-search' => '1',
+    'block-islandora-solr-basic-facets' => '1',
+    'block-block-1' => '3',
+    'block-menu-block-8' => '1',
+    'block-menu-block-9' => '1',
   );
   $export['collapsiblock_settings'] = $strongarm;
 
@@ -94,9 +191,23 @@ function cwrc_baseline_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_end_date_time';
+  $strongarm->value = 'g:ia';
+  $export['date_format_end_date_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_html5_tools_iso8601';
   $strongarm->value = 'c';
   $export['date_format_html5_tools_iso8601'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_start_date_full';
+  $strongarm->value = 'M n Y - g:ia';
+  $export['date_format_start_date_full'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -167,6 +278,107 @@ function cwrc_baseline_strongarm() {
   $strongarm->name = 'filter_fallback_format';
   $strongarm->value = 'plain_text';
   $export['filter_fallback_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_compact_tag';
+  $strongarm->value = 1;
+  $export['google_tag_compact_tag'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_container_id';
+  $strongarm->value = 'GTM-MM752Z';
+  $export['google_tag_container_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_path_list';
+  $strongarm->value = 'admin*
+batch*
+node/add*
+node/*/*
+user/*/*';
+  $export['google_tag_path_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_path_toggle';
+  $strongarm->value = '0';
+  $export['google_tag_path_toggle'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_role_list';
+  $strongarm->value = array(
+    1 => 0,
+    2 => 0,
+    4 => 0,
+    3 => 0,
+    75 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    53 => 0,
+    73 => 0,
+    54 => 0,
+    74 => 0,
+    55 => 0,
+    56 => 0,
+    57 => 0,
+    58 => 0,
+    59 => 0,
+    60 => 0,
+    61 => 0,
+    62 => 0,
+    63 => 0,
+    64 => 0,
+    65 => 0,
+    66 => 0,
+    67 => 0,
+    68 => 0,
+    69 => 0,
+    70 => 0,
+    71 => 0,
+    72 => 0,
+  );
+  $export['google_tag_role_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_role_toggle';
+  $strongarm->value = '0';
+  $export['google_tag_role_toggle'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_status_list';
+  $strongarm->value = '403 Forbidden
+404 Not Found';
+  $export['google_tag_status_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_status_toggle';
+  $strongarm->value = 0;
+  $export['google_tag_status_toggle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -255,6 +467,627 @@ function cwrc_baseline_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'imagemagick_gm';
+  $strongarm->value = 0;
+  $export['imagemagick_gm'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imce_profiles';
+  $strongarm->value = array(
+    1 => array(
+      'name' => 'User-1',
+      'usertab' => 1,
+      'filesize' => '0',
+      'quota' => '0',
+      'tuquota' => '0',
+      'extensions' => '*',
+      'dimensions' => '1200x1200',
+      'filenum' => '0',
+      'directories' => array(
+        0 => array(
+          'name' => 'imce',
+          'subnav' => 1,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 1,
+          'resize' => 1,
+        ),
+      ),
+      'thumbnails' => array(
+        0 => array(
+          'name' => 'Small',
+          'dimensions' => '90x90',
+          'prefix' => 'small_',
+          'suffix' => '',
+        ),
+        1 => array(
+          'name' => 'Medium',
+          'dimensions' => '120x120',
+          'prefix' => 'medium_',
+          'suffix' => '',
+        ),
+        2 => array(
+          'name' => 'Large',
+          'dimensions' => '180x180',
+          'prefix' => 'large_',
+          'suffix' => '',
+        ),
+      ),
+    ),
+    2 => array(
+      'name' => 'Sample profile',
+      'usertab' => 1,
+      'filesize' => 1,
+      'quota' => 2,
+      'tuquota' => 0,
+      'extensions' => 'gif png jpg jpeg',
+      'dimensions' => '800x600',
+      'filenum' => 1,
+      'directories' => array(
+        0 => array(
+          'name' => 'u%uid',
+          'subnav' => 0,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 0,
+          'resize' => 0,
+        ),
+      ),
+      'thumbnails' => array(
+        0 => array(
+          'name' => 'Thumb',
+          'dimensions' => '90x90',
+          'prefix' => 'thumb_',
+          'suffix' => '',
+        ),
+      ),
+    ),
+  );
+  $export['imce_profiles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imce_roles_profiles';
+  $strongarm->value = array(
+    4 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    3 => array(
+      'weight' => '0',
+      'public_pid' => '1',
+    ),
+    5 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    6 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    15 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    21 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    7 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    8 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    11 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    9 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    12 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    14 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    13 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    16 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    27 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    18 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    23 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    19 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    22 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    69 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    20 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    17 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    24 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    29 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    28 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    32 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    30 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    25 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    33 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    34 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    35 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    42 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    37 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    38 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    39 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    40 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    43 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    49 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    44 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    45 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    47 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    48 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    50 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    52 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    53 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    55 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    54 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    57 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    59 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    58 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    60 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    62 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    64 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    63 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    65 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    68 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    67 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    95 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    70 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    72 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    73 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    74 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    75 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    77 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    78 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    79 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    80 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    83 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    82 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    84 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    87 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    85 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    88 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    89 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    90 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    92 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    93 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    94 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    96 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    97 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    98 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    100 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    99 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    101 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    103 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    102 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    133 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    104 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    108 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    106 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    109 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    111 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    138 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    110 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    107 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    112 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    135 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    134 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    137 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    136 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    113 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    105 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    139 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    142 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    140 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    143 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    145 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    144 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    148 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    141 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    150 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    149 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    146 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    152 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    151 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    147 => array(
+      'weight' => '0',
+      'public_pid' => 0,
+    ),
+    2 => array(
+      'weight' => 11,
+      'public_pid' => '1',
+    ),
+    1 => array(
+      'weight' => 12,
+      'public_pid' => 0,
+    ),
+  );
+  $export['imce_roles_profiles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imce_settings_absurls';
+  $strongarm->value = 0;
+  $export['imce_settings_absurls'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imce_settings_disable_private';
+  $strongarm->value = 1;
+  $export['imce_settings_disable_private'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imce_settings_replace';
+  $strongarm->value = '0';
+  $export['imce_settings_replace'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imce_settings_textarea';
+  $strongarm->value = '';
+  $export['imce_settings_textarea'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imce_settings_thumb_method';
+  $strongarm->value = 'scale_and_crop';
+  $export['imce_settings_thumb_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'islandora_blocks_citation_style';
+  $strongarm->value = 'APA';
+  $export['islandora_blocks_citation_style'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'islandora_namespace_restriction_enforced';
+  $strongarm->value = 0;
+  $export['islandora_namespace_restriction_enforced'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'islandora_workflow_rest_enable_namespace';
+  $strongarm->value = 0;
+  $export['islandora_workflow_rest_enable_namespace'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_compression_type';
   $strongarm->value = 'min';
   $export['jquery_update_compression_type'] = $strongarm;
@@ -263,7 +1096,7 @@ function cwrc_baseline_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_admin_version';
-  $strongarm->value = 'default';
+  $strongarm->value = '';
   $export['jquery_update_jquery_admin_version'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -594,6 +1427,7 @@ function cwrc_baseline_strongarm() {
     5 => 6,
     6 => 7,
     7 => 8,
+    8 => 9,
   );
   $export['menu_block_ids'] = $strongarm;
 
@@ -1163,6 +1997,41 @@ function cwrc_baseline_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_noscript';
+  $strongarm->value = 0;
+  $export['recaptcha_noscript'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_size';
+  $strongarm->value = '';
+  $export['recaptcha_size'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_tabindex';
+  $strongarm->value = '0';
+  $export['recaptcha_tabindex'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_theme';
+  $strongarm->value = 'light';
+  $export['recaptcha_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'recaptcha_type';
+  $strongarm->value = 'image';
+  $export['recaptcha_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_403';
   $strongarm->value = 'r4032login';
   $export['site_403'] = $strongarm;
@@ -1171,7 +2040,7 @@ function cwrc_baseline_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_404';
-  $strongarm->value = '';
+  $strongarm->value = 'notfound';
   $export['site_404'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1185,14 +2054,14 @@ function cwrc_baseline_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'node';
+  $strongarm->value = 'front';
   $export['site_frontpage'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
-  $strongarm->value = 'Islandora Sandbox';
+  $strongarm->value = 'CWRC/CSEC';
   $export['site_name'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1269,7 +2138,7 @@ function cwrc_baseline_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_pictures';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['user_pictures'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1311,14 +2180,14 @@ function cwrc_baseline_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_style';
-  $strongarm->value = 'thumbnail';
+  $strongarm->value = 'medium';
   $export['user_picture_style'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = 2;
+  $strongarm->value = '2';
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass();

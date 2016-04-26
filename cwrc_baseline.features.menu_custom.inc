@@ -16,7 +16,7 @@ function cwrc_baseline_menu_default_menu_custom() {
     'title' => 'Main menu',
     'description' => 'The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.',
     'language' => 'und',
-    'i18n_mode' => 0,
+    'i18n_mode' => 5,
   );
   // Exported menu: management.
   $menus['management'] = array(
@@ -24,7 +24,7 @@ function cwrc_baseline_menu_default_menu_custom() {
     'title' => 'Management',
     'description' => 'The <em>Management</em> menu contains links for administrative tasks.',
     'language' => 'und',
-    'i18n_mode' => 0,
+    'i18n_mode' => 5,
   );
   // Exported menu: menu-secondary-menu.
   $menus['menu-secondary-menu'] = array(
@@ -32,7 +32,7 @@ function cwrc_baseline_menu_default_menu_custom() {
     'title' => 'Secondary menu',
     'description' => '',
     'language' => 'und',
-    'i18n_mode' => 0,
+    'i18n_mode' => 5,
   );
   // Exported menu: menu-tertiary-menu.
   $menus['menu-tertiary-menu'] = array(
@@ -40,7 +40,7 @@ function cwrc_baseline_menu_default_menu_custom() {
     'title' => 'Tertiary menu',
     'description' => '',
     'language' => 'und',
-    'i18n_mode' => 0,
+    'i18n_mode' => 5,
   );
   // Exported menu: navigation.
   $menus['navigation'] = array(
@@ -48,7 +48,7 @@ function cwrc_baseline_menu_default_menu_custom() {
     'title' => 'Navigation',
     'description' => 'The <em>Navigation</em> menu contains links intended for site visitors. Links are added to the <em>Navigation</em> menu automatically by some modules.',
     'language' => 'und',
-    'i18n_mode' => 0,
+    'i18n_mode' => 5,
   );
   // Exported menu: user-menu.
   $menus['user-menu'] = array(
@@ -56,7 +56,7 @@ function cwrc_baseline_menu_default_menu_custom() {
     'title' => 'User menu',
     'description' => 'The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.',
     'language' => 'und',
-    'i18n_mode' => 0,
+    'i18n_mode' => 5,
   );
   // Translatables
   // Included for use with string extractors like potx.
