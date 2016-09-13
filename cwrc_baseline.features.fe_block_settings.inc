@@ -413,7 +413,11 @@ function cwrc_baseline_default_fe_block_settings() {
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'menu_block',
-    'node_types' => array(),
+    'node_types' => array(
+      0 => 'article',
+      1 => 'event',
+      2 => 'page',
+    ),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
