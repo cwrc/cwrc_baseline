@@ -15,11 +15,14 @@ function cwrc_baseline_menu() {
   $items['front'] = array(
     'title' => 'Front Page',
     'page callback' => 'cwrc_baseline_front',
+    // No access restriction because anyone should be able to access the front
+    // page of the site.
     'access callback' => TRUE,
   );
   $items['notfound'] = array(
     'title' => 'Page not found',
     'page callback' => 'cwrc_baseline_404',
+    // No access restriction because anyone should be able to get a 404 error.
     'access callback' => TRUE,
   );
   return $items;
