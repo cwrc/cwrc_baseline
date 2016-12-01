@@ -7,6 +7,8 @@
 
 include_once 'cwrc_baseline.features.inc';
 
+/* Hooks. */
+
 /**
  * Implements hook_menu().
  */
@@ -27,6 +29,8 @@ function cwrc_baseline_menu() {
   );
   return $items;
 }
+
+/* Menu callbacks. */
 
 /**
  * Page callback: Display a blank front page.
