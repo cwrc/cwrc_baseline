@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the cwrc_baseline feature.
@@ -32,7 +33,7 @@ function cwrc_baseline_front() {
 }
 
 /**
- * Render a simple message for the 404 page
+ * Render a simple message for the 404 page.
  */
 function cwrc_baseline_404() {
   return t("The requested page could not be found!");
