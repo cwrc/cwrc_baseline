@@ -29,14 +29,14 @@ function cwrc_baseline_menu() {
 }
 
 /**
- * Page callback that returns a blank page for the front page.
+ * Page callback: Display a blank front page.
  */
 function cwrc_baseline_front() {
   return '';
 }
 
 /**
- * Render a simple message for the 404 page.
+ * Page callback: Display a simple message for a 404 page.
  */
 function cwrc_baseline_404() {
   return t("The requested page could not be found!");
