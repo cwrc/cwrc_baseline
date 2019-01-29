@@ -10,7 +10,7 @@
 function cwrc_baseline_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_person_entity'
+  // Exported field_base: 'field_person_entity'.
   $field_bases['field_person_entity'] = array(
     'active' => 1,
     'cardinality' => 1,

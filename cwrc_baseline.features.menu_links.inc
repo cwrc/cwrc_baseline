@@ -10,7 +10,7 @@
 function cwrc_baseline_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-secondary-menu_home:<front>
+  // Exported menu link: menu-secondary-menu_home:<front>.
   $menu_links['menu-secondary-menu_home:<front>'] = array(
     'menu_name' => 'menu-secondary-menu',
     'link_path' => '<front>',
@@ -21,6 +21,7 @@ function cwrc_baseline_menu_default_menu_links() {
         'title' => '',
       ),
       'identifier' => 'menu-secondary-menu_home:<front>',
+      'alter' => TRUE,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -32,10 +33,10 @@ function cwrc_baseline_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Home');
-
 
   return $menu_links;
 }

@@ -253,15 +253,52 @@ function cwrc_baseline_ctools_plugin_api($module = NULL, $api = NULL) {
 function cwrc_baseline_de_contextual_help_config_features_default_settings() {
   return array(
   0 => array(
+    'rule_id' => 2,
     'url_pattern' => '*',
-    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]',
+    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]/',
     'weight' => -10,
     'status' => 1,
   ),
   1 => array(
+    'rule_id' => 1,
+    'url_pattern' => 'user/*/dashboard',
+    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]/#my-dashboard',
+    'weight' => -8,
+    'status' => 1,
+  ),
+  2 => array(
+    'rule_id' => 4,
+    'url_pattern' => 'user/*/edit',
+    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]/#editing-my-profile',
+    'weight' => -8,
+    'status' => 1,
+  ),
+  3 => array(
+    'rule_id' => 3,
     'url_pattern' => 'node/*/dashboard',
-    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]/#project-dashboard',
-    'weight' => -9,
+    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]/index.html#Project Homepages/Make Changes to Project Homepages.html',
+    'weight' => -7,
+    'status' => 1,
+  ),
+  4 => array(
+    'rule_id' => 5,
+    'url_pattern' => 'islandora/object/islandora%3Aroot',
+    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]/#collaboratory',
+    'weight' => -6,
+    'status' => 1,
+  ),
+  5 => array(
+    'rule_id' => 6,
+    'url_pattern' => 'project/*',
+    'link_destination' => 'http://cwrc.ca/Documentation/[cwrc:group-role]/#Project Homepages',
+    'weight' => -5,
+    'status' => 1,
+  ),
+  6 => array(
+    'rule_id' => 7,
+    'url_pattern' => 'admin/*',
+    'link_destination' => 'https://docs.google.com/document/d/1HdgPm6QVrznNNHUKnU08Txv57yUh9rogn-YWJEmLnd8/',
+    'weight' => -4,
     'status' => 1,
   ),
 );

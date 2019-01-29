@@ -157,6 +157,8 @@ function cwrc_baseline_strongarm() {
     'block-block-1' => '3',
     'block-menu-block-8' => '1',
     'block-menu-block-9' => '1',
+    'block-menu-block-2' => '1',
+    'block-cwrc-dashboards-user-locked-objects' => '1',
   );
   $export['collapsiblock_settings'] = $strongarm;
 
@@ -282,13 +284,6 @@ function cwrc_baseline_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'google_tag_compact_tag';
-  $strongarm->value = 1;
-  $export['google_tag_compact_tag'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'google_tag_container_id';
   $strongarm->value = 'GTM-MM752Z';
   $export['google_tag_container_id'] = $strongarm;
@@ -308,7 +303,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'google_tag_path_toggle';
-  $strongarm->value = '0';
+  $strongarm->value = 'exclude listed';
   $export['google_tag_path_toggle'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -316,45 +311,41 @@ user/*/*';
   $strongarm->api_version = 1;
   $strongarm->name = 'google_tag_role_list';
   $strongarm->value = array(
-    1 => 0,
-    2 => 0,
-    4 => 0,
-    3 => 0,
-    75 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-    9 => 0,
-    10 => 0,
-    11 => 0,
-    12 => 0,
-    13 => 0,
-    14 => 0,
-    15 => 0,
-    16 => 0,
-    53 => 0,
-    73 => 0,
-    54 => 0,
-    74 => 0,
-    55 => 0,
-    56 => 0,
-    57 => 0,
-    58 => 0,
-    59 => 0,
-    60 => 0,
-    61 => 0,
-    62 => 0,
-    63 => 0,
-    64 => 0,
-    65 => 0,
-    66 => 0,
-    67 => 0,
-    68 => 0,
-    69 => 0,
-    70 => 0,
-    71 => 0,
-    72 => 0,
+    'anonymous user' => 0,
+    'authenticated user' => 0,
+    'Orlando User' => 0,
+    'administrator' => 0,
+    'node:28:2:member' => 0,
+    'Test role' => 0,
+    'CEWW Role' => 0,
+    'Biblifo' => 0,
+    'Bios Canadian Playwrights' => 0,
+    'Cabaret Commons' => 0,
+    '' => 0,
+    'Eng Can Women\'s Poetry' => 0,
+    'Can Span Civil War' => 0,
+    'metafeminisme' => 0,
+    'Can Women SF pulp' => 0,
+    'Paper Speaking' => 0,
+    'Women and Words' => 0,
+    'node:23:5:project editor' => 0,
+    'node:27:5:project editor' => 0,
+    'node:24:1:non-member' => 0,
+    'node:28:1:non-member' => 0,
+    'node:24:2:member' => 0,
+    'node:24:4:project contributor' => 0,
+    'node:24:5:project editor' => 0,
+    'node:25:1:non-member' => 0,
+    'node:25:2:member' => 0,
+    'node:25:4:project contributor' => 0,
+    'node:25:5:project editor' => 0,
+    'node:26:1:non-member' => 0,
+    'node:26:2:member' => 0,
+    'node:26:4:project contributor' => 0,
+    'node:26:5:project editor' => 0,
+    'node:27:1:non-member' => 0,
+    'node:27:2:member' => 0,
+    'node:27:4:project contributor' => 0,
   );
   $export['google_tag_role_list'] = $strongarm;
 
@@ -362,7 +353,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'google_tag_role_toggle';
-  $strongarm->value = '0';
+  $strongarm->value = 'exclude listed';
   $export['google_tag_role_toggle'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -377,7 +368,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'google_tag_status_toggle';
-  $strongarm->value = 0;
+  $strongarm->value = 'exclude listed';
   $export['google_tag_status_toggle'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1068,7 +1059,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'islandora_blocks_citation_style';
-  $strongarm->value = 'APA';
+  $strongarm->value = 'Modern Language Association 8th edition';
   $export['islandora_blocks_citation_style'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1201,7 +1192,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_2_follow';
-  $strongarm->value = 0;
+  $strongarm->value = 'active';
   $export['menu_block_2_follow'] = $strongarm;
 
   $strongarm = new stdClass();

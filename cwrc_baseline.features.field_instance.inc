@@ -10,7 +10,7 @@
 function cwrc_baseline_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_person_entity'
+  // Exported field_instance: 'user-user-field_person_entity'.
   $field_instances['user-user-field_person_entity'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
