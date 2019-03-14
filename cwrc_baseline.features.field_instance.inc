@@ -22,7 +22,7 @@ function cwrc_baseline_field_default_field_instances() {
         'module' => 'islandora_object_field',
         'settings' => array(),
         'type' => 'islandora_object_field_label_formatter',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'user',

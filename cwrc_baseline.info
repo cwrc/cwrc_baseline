@@ -210,7 +210,6 @@ features[fe_block_settings][] = islandora_blocks-datastreams
 features[fe_block_settings][] = islandora_blocks-metadata
 features[fe_block_settings][] = islandora_bookmark-islandora_bookmark
 features[fe_block_settings][] = islandora_compound_object-compound_navigation
-features[fe_block_settings][] = menu-devel
 features[fe_block_settings][] = menu-menu-secondary-menu
 features[fe_block_settings][] = menu-menu-tertiary-menu
 features[fe_block_settings][] = menu_block-1
