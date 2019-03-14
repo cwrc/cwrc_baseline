@@ -107,12 +107,26 @@ function cwrc_baseline_field_widget_form(&$form, &$form_state, $field, $instance
  *   The element.
  */
 function cwrc_baseline_orcid_textfield_field_widget_validate(array &$element, array &$form_state) {
-  if ($element['#value'] !== '' && !preg_match("/\d{4}[\-]\d{4}[\-]\d{4}[\-][0-9X]{4}$/", $element['#value'])) {
-    $title = $element['#attributes']['title'];
-    form_error($element, t('@name is not a valid ORCID iD. @title.', array(
-      '@name' => $element['#title'],
-      '@title' => $title,
-    )));
+  if ($element['#value'] !== '') {
+    $label = $element['#title'];
+    $value = $element['#value'];
+    $url = 'https://orcid.org/' . $value;
+    $pattern = '/\d{4}[\-]\d{4}[\-]\d{4}[\-][0-9X]{4}$/';
+
+    if (!preg_match($pattern, $value)) {
+      $title = $element['#attributes']['title'];
+      form_error($element, t('@label is not a valid ORCID iD format. @title.', array(
+        '@label' => $label,
+        '@title' => $title,
+      )));
+    }
+    elseif (strpos(@get_headers($url)[0], '200 OK') === FALSE) {
+      form_error($element, t('@label is not a valid ORCID iD. @url could not be found!', array(
+        '@label' => $label,
+        '@url' => $url,
+      )));
+    }
   }
+
   return $element;
 }
