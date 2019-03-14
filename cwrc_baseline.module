@@ -45,3 +45,74 @@ function cwrc_baseline_front() {
 function cwrc_baseline_404() {
   return t("The requested page could not be found!");
 }
+
+/**
+ * Implements hook_field_widget_info().
+ */
+function cwrc_baseline_field_widget_info() {
+  return array(
+    'orcid_textfield' => array(
+      'label' => t('ORCID ID Textfield'),
+      'field types' => array('text'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_widget_form().
+ */
+function cwrc_baseline_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+  if ($instance['widget']['type'] === 'orcid_textfield') {
+    $path = drupal_get_path('module', 'cwrc_baseline');
+    $element['value'] = array(
+      '#type' => 'textfield',
+      '#title' => $element['#title'],
+      '#description' => $element['#description'],
+      '#field_prefix' => 'https://orcid.org/',
+      '#default_value' => isset($items[$delta]['value']) ? $items[$delta]['value'] : '',
+      '#size' => 20,
+      '#maxlength' => $field['settings']['max_length'],
+      '#attributes' => array(
+        'class' => array('text-full', 'text-orcid-element', 'masked'),
+        'placeholder' => 'XXXX-XXXX-XXXX-XXXX',
+        'pattern' => '[0-9]{4}[\-][0-9]{4}[\-][0-9]{4}[\-][0-9X]{4}$',
+        'data-charset' => 'XXXX-XXXX-XXXX-XXX?',
+        'title' => t('The ORCID iD is expressed as an https URI, i.e. the 16-digit identifier is preceded by "https://orcid.org/". A hyphen is inserted every 4 digits of the identifier to aid readability. The last character in the ORCID iD is a checksum. In accordance with ISO/IEC 7064:2003, MOD 11-2, this checksum must be "0" - "9" or "X", a capital letter X which represents the value 10.'),
+      ),
+      '#attached' => array(
+        'js' => array(
+          $path . '/js/estelle-input-masking/js/masking-input.js',
+          $path . '/js/input-mask.js',
+        ),
+        'css' => array($path . '/js/estelle-input-masking/css/masking-input.css'),
+      ),
+      '#element_validate' => array(
+        'cwrc_baseline_orcid_textfield_field_widget_validate',
+      ),
+    );
+  }
+
+  return $element;
+}
+
+/**
+ * Element validate callback for the ORCID iD widget.
+ *
+ * @param array $element
+ *   The element.
+ * @param array $form_state
+ *   The form state.
+ *
+ * @return array
+ *   The element.
+ */
+function cwrc_baseline_orcid_textfield_field_widget_validate(array &$element, array &$form_state) {
+  if ($element['#value'] !== '' && !preg_match("/\d{4}[\-]\d{4}[\-]\d{4}[\-][0-9X]{4}$/", $element['#value'])) {
+    $title = $element['#attributes']['title'];
+    form_error($element, t('@name is not a valid ORCID iD. @title.', array(
+      '@name' => $element['#title'],
+      '@title' => $title,
+    )));
+  }
+  return $element;
+}
