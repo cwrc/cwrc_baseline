@@ -59,6 +59,129 @@ function cwrc_baseline_field_widget_info() {
 }
 
 /**
+ * Implements hook_field_formatter_info().
+ */
+function cwrc_baseline_field_formatter_info() {
+  return array(
+    'orcid_textfield' => array(
+      'label' => t('ORCID ID'),
+      'field types' => array('text'),
+      'settings' => array(
+        'as_link' => TRUE,
+        'orcid_as_link_text' => TRUE,
+        'open_new_window' => FALSE,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function cwrc_baseline_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $element = array();
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  if ($display['type'] === 'orcid_textfield') {
+    $element['as_link'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Display the ORCID id as link.'),
+      '#default_value' => $settings['as_link'],
+    );
+    $element['orcid_as_link_text'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Use the ORCID id as link text.'),
+      '#default_value' => $settings['orcid_as_link_text'],
+      '#states' => array(
+        'invisible' => array(
+          ':input[name="fields[field_orcid_id][settings_edit_form][settings][as_link]"]' => array('checked' => FALSE),
+        ),
+      ),
+    );
+    $element['open_new_window'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Open the link in a new window equivalent to add "_blank" attribute to <a> tag.'),
+      '#default_value' => $settings['open_new_window'],
+      '#states' => array(
+        'invisible' => array(
+          ':input[name="fields[field_orcid_id][settings_edit_form][settings][as_link]"]' => array('checked' => FALSE),
+        ),
+      ),
+    );
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function cwrc_baseline_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = '';
+  if ($display['type'] === 'orcid_textfield') {
+    $as_link = $settings['as_link'];
+    if ($as_link) {
+      $link_text = $settings['orcid_as_link_text'];
+      $new_window = $settings['open_new_window'];
+      $summary = t('Display as link with @url as link text. @new_window', array(
+        '@url' => $link_text ? 'ORCID' : t('full url'),
+        '@new_window' => $new_window ? t('Will open a new browser window.') : '',
+      ));
+    }
+    else {
+      $summary = t('Display the ORCID Id as plain text.');
+    }
+  }
+
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function cwrc_baseline_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+  $display_settings = $display['settings'];
+  $pattern = '/\d{4}[\-]\d{4}[\-]\d{4}[\-][0-9X]{4}$/';
+
+  if ($display['type'] === 'orcid_textfield') {
+    foreach ($items as $delta => $item) {
+      $output = _text_sanitize($instance, $langcode, $item, 'value');
+      if (!empty($display_settings['as_link']) && preg_match($pattern, $output)) {
+        $href = 'https://orcid.org/' . $output;
+        $element[$delta] = array(
+          '#type' => 'link',
+          '#href' => $href,
+          '#title' => !empty($display_settings['orcid_as_link_text']) ? $output : $href,
+          '#options' => array(
+            'absolute' => TRUE,
+            'external' => TRUE,
+            'attributes' => array(
+              'title' => t('View @value profile page.', array(
+                '@value' => $output,
+              )),
+            ),
+          ),
+        );
+
+        if (!empty($display_settings['open_new_window'])) {
+          $element[$delta]['#options']['attributes']['target'] = '_blank';
+        }
+      }
+      else {
+        $element[$delta] = array('#markup' => $output);
+      }
+    }
+  }
+
+  return $element;
+}
+
+/**
  * Implements hook_field_widget_form().
  */
 function cwrc_baseline_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
