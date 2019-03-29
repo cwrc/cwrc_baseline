@@ -169,21 +169,20 @@ function cwrc_baseline_ckeditor_profile_defaults() {
         'ss' => 2,
         'toolbar' => '[
     [\'Source\'],
-    [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\', \'Scayt\'],
+    [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\',\'Scayt\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Image\',\'Media\',\'Flash\',\'Table\',\'HorizontalRule\',\'Smiley\',\'SpecialChar\',\'Iframe\'],
+    [\'Image\',\'Video\',\'Audio\',\'Table\',\'HorizontalRule\',\'Smiley\',\'SpecialChar\',\'Iframe\'],
     \'/\',
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\',\'CreateDiv\'],
     [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'BidiLtr\',\'BidiRtl\',\'-\',\'Language\'],
-    [\'Link\',\'Unlink\',\'Anchor\',\'Linkit\'],
+    [\'Link\',\'Unlink\',\'Anchor\'],
     [\'DrupalBreak\'],
     \'/\',
     [\'Format\',\'Font\',\'FontSize\'],
     [\'TextColor\',\'BGColor\'],
-    [\'Maximize\', \'ShowBlocks\']
-]
-    ',
+    [\'ShowBlocks\',\'Maximize\']
+]',
         'expand' => 't',
         'default' => 'f',
         'show_toggle' => 't',
@@ -224,6 +223,17 @@ function cwrc_baseline_ckeditor_profile_defaults() {
         'theme_config_js' => 'f',
         'js_conf' => '',
         'loadPlugins' => array(
+          'audio' => array(
+            'name' => 'audio',
+            'desc' => 'Plugin for inserting HTML5 audio using an audio source link.',
+            'path' => '/sites/default/modules/custom/cwrc_baseline/editors/audio/',
+            'buttons' => array(
+              'Audio' => array(
+                'icon' => 'icons/audio.png',
+                'label' => 'Audio',
+              ),
+            ),
+          ),
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',
             'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
@@ -235,6 +245,17 @@ function cwrc_baseline_ckeditor_profile_defaults() {
               ),
             ),
             'default' => 't',
+          ),
+          'video' => array(
+            'name' => 'video',
+            'desc' => 'Plugin for inserting HTML5 video using a video source link.',
+            'path' => '/sites/default/modules/custom/cwrc_baseline/editors/video/',
+            'buttons' => array(
+              'Video' => array(
+                'icon' => 'icons/video.png',
+                'label' => 'Video',
+              ),
+            ),
           ),
         ),
       ),

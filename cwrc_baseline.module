@@ -253,3 +253,37 @@ function cwrc_baseline_orcid_textfield_field_widget_validate(array &$element, ar
 
   return $element;
 }
+
+/**
+ * Implements hook_ckeditor_plugin().
+ */
+function cwrc_baseline_ckeditor_plugin() {
+  $path = base_path() . drupal_get_path('module', 'cwrc_baseline') . '/editors';
+  $html5video = array(
+    'name' => 'video',
+    'desc' => t('Plugin for inserting HTML5 video using a video source link.'),
+    'path' => $path . '/video/',
+    'buttons' => array(
+      'Video' => array(
+        'icon' => 'icons/video.png',
+        'label' => 'Video',
+      ),
+    ),
+  );
+  $html5audio = array(
+    'name' => 'audio',
+    'desc' => t('Plugin for inserting HTML5 audio using an audio source link.'),
+    'path' => $path . '/audio/',
+    'buttons' => array(
+      'Audio' => array(
+        'icon' => 'icons/audio.png',
+        'label' => 'Audio',
+      ),
+    ),
+  );
+
+  return array(
+    'video' => $html5video,
+    'audio' => $html5audio,
+  );
+}
