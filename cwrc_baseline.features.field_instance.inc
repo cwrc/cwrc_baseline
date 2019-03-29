@@ -19,14 +19,18 @@ function cwrc_baseline_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'cwrc_baseline',
+        'settings' => array(
+          'as_link' => TRUE,
+          'open_new_window' => FALSE,
+          'orcid_as_link_text' => TRUE,
+        ),
+        'type' => 'orcid_textfield',
         'weight' => 9,
       ),
     ),
     'entity_type' => 'user',
-    'fences_wrapper' => 'no_wrapper',
+    'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_orcid_id',
     'label' => 'ORCID ID',
     'required' => 0,
@@ -36,11 +40,9 @@ function cwrc_baseline_field_default_field_instances() {
       'user_register_form' => 1,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'cwrc_baseline',
-      'settings' => array(
-        'size' => 20,
-      ),
+      'settings' => array(),
       'type' => 'orcid_textfield',
       'weight' => 14,
     ),
