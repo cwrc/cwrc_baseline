@@ -243,7 +243,7 @@ function cwrc_baseline_orcid_textfield_field_widget_validate(array &$element, ar
         '@title' => $title,
       )));
     }
-    elseif (strpos(@get_headers($url)[0], '200 OK') === FALSE) {
+    elseif (strpos(@get_headers($url)[0], '200') === FALSE) {
       form_error($element, t('@label is not a valid ORCID iD. @url could not be found!', array(
         '@label' => $label,
         '@url' => $url,
